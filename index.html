@@ -61,16 +61,34 @@
 
         <section>
           <h2>What is Jenkins?</h2>
-          <p>blah blah</p>
+          <blockquote>
+            &ldquo;Jenkins is an award-winning application that monitors executions of repeated jobs,
+            such as building a software project or jobs run by cron.&rdquo;
+          </blockquote>
+          <a href="https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins" target="_blank">Jenkins Wiki</a>
         </section>
 
         <section>
-          <h2>Setting up Jenkins</h2>
-          <ol>
-            <li>Adding credentials.</li>
-            <li>Adding a node.</li>
-            <li>Setting up jobs for a node.</li>
-          </ol>
+          <section>
+            <h2>Setting up Jenkins</h2>
+            <ol>
+              <li>Installation.</li>
+              <li>Adding credentials.</li>
+              <li>Adding a node.</li>
+            </ol>
+          </section>
+          <section>
+            <h2>1. Installation</h2>
+            <a href="https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins" target="_blank">https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins</a>
+          </section>
+          <section>
+            <h2>2. Adding credentials</h2>
+            <img src="images/jenkins_credentials.png"/>
+          </section>
+          <section>
+            <h2>3. Adding a node</h2>
+            <img src="images/jenkins_node.png"/>
+          </section>
         </section>
 
         <section>
@@ -78,9 +96,56 @@
           <ul>
             <li>Running cron.</li>
             <li>Introducing continuous integration.</li>
-            <li>Downsyncing production to development.</li>
+            <li>Downloading data from production to development</li>
             <li>Deploying a release.</li>
           </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>Running cron</h2>
+            <img src="images/new_job_cron.png"/>
+          </section>
+          <section>
+            <h2>Running cron - setting the node</h2>
+            <img src="images/job_node.png"/>
+          </section>
+          <section>
+            <h2>Running cron - frequency</h2>
+            <img src="images/cron_frequency.png"/>
+          </section>
+          <section>
+            <h2>Running cron - do it!</h2>
+            <img src="images/cron_shell_step.png"/>
+          </section>
+          <section>
+            <h2>Running cron - notifications</h2>
+            <img src="images/notifications.png"/>
+          </section>
+          <section>
+            <h2>Running cron - overview</h2>
+            <img src="images/job_overview.png"/>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/ci_background.png">
+            <div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px;">
+              <h2>Introducing Continuous Integration</h2>
+            </div>
+          </section>
+          <section>
+            <h2>CI - Watching master branch</h2>
+            <img src="images/scm_master.png"/>
+          </section>
+          <section>
+            <h2>CI - Triggering on git push</h2>
+            <img src="images/ci_trigger.png"/>
+          </section>
+          <section>
+            <h2>CI - Execute shell script</h2>
+            <img src="images/ci_shell.png"/>
+          </section>
         </section>
 
         <section>
