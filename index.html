@@ -39,10 +39,11 @@
 
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
-        <section data-background="images/background.png">
+        <section data-background-video="video/jenkins_cron.mp4" data-background-video-loop data-background-color="#000000">
           <div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px;">
             <h2>Jenkins and Drupal</h2>
             <p>Juampy NR - @juampynr</p>
+            <p>DrupalCamp Costa Rica 2015</p>
           </div>
         </section>
 
@@ -59,13 +60,15 @@
           </div>
         </section>
 
-        <section>
-          <h2>What is Jenkins?</h2>
-          <blockquote>
-            &ldquo;Jenkins is an award-winning application that monitors executions of repeated jobs,
-            such as building a software project or jobs run by cron.&rdquo;
-          </blockquote>
-          <a href="https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins" target="_blank">Jenkins Wiki</a>
+        <section data-background="images/background.png">
+          <div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px;">
+            <h2>What is Jenkins?</h2>
+            <blockquote>
+              &ldquo;Jenkins is an award-winning application that monitors executions of repeated jobs,
+              such as building a software project or jobs run by cron.&rdquo;
+            </blockquote>
+            <a href="https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins" target="_blank">Jenkins Wiki</a>
+          </div>
         </section>
 
         <section>
@@ -132,6 +135,11 @@
           <section data-background="images/ci_background.png">
             <div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px;">
               <h2>Introducing Continuous Integration</h2>
+              <blockquote>
+                Continuous integration (CI) is the practice, in software engineering, of merging all
+                developer working copies with a shared mainline several times a day.
+              </blockquote>
+              <a href="https://en.wikipedia.org/wiki/Continuous_integration" target="_blank">Wikipedia</a>
             </div>
           </section>
           <section>
@@ -146,10 +154,69 @@
             <h2>CI - Execute shell script</h2>
             <img src="images/ci_shell.png"/>
           </section>
+          <section data-background-video="video/merge_job.mp4" data-background-video-loop data-background-color="#000000">
+          </section>
         </section>
 
         <section>
-          <h2>Triggering jobs</h2>
+          <section data-background="images/jenkins_downsync.png">
+            <div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px;">
+              <h2>Downloading data from Production to Development (Downsync)</h2>
+            </div>
+          </section>
+          <section>
+            <h2>Downsync - Testing access from source to target</h2>
+            <pre>
+              <code>
+juampy@juampy-box:~ $ ssh dev.example.com
+juampy@dev:~$ sudo su jenkins
+jenkins@dev:/home/juampy$ cd /var/www/edit.example/docroot
+jenkins@dev:/var/www/edit.example.com/docroot$ drush @lullabot.prod status
+ Drupal version                  :  7.38                                                                                                              
+ Site URI                        :  http://edit.lullabot.com                                                                                          
+ Database driver                 :  mysql                                                                                                             
+ Drupal bootstrap                :  Successful                                                                                                        
+ Drupal user                     :  Anonymous                                                                                                         
+ Site path                       :  sites/default                                                                                                     
+ File directory path             :  sites/default/files                                                                                               
+ Temporary file directory path   :  /tmp               
+jenkins@dev:/var/www/edit.example.com/docroot$ drush @lullabot.prod status
+jenkins@dev:/var/www/edit.example.com/docroot$ exit
+exit
+juampy@dev:~$ exit
+logout
+Connection to dev.example.com closed.
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h2>Downsync - Avoiding collisions between jobs</h2>
+            <img src="images/jenkins_block.png"/>
+          </section>
+          <section>
+            <h2>CI - Execute shell script</h2>
+            <img src="images/downsync_shell.png"/>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="images/jenkins-deploy.png">
+            <div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px;">
+              <h2>Deploying releases</h2>
+            </div>
+          </section>
+          <section>
+            <h2>Deployments - Adding parameters</h2>
+            <img src="images/deploy_param.png"/>
+          </section>
+          <section>
+            <h2>Deployments - Shell script</h2>
+            <img src="images/deployment_shell.png"/>
+          </section>
+        </section>
+
+        <section>
+          <h2>Alternative ways to trigger jobs</h2>
           <ul>
             <li>Manual trigger.</li>
             <li>Jenkins IRC bot.</li>
